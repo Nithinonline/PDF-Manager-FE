@@ -20,7 +20,6 @@ const Login = () => {
       password: password,
     })
       .then((res) => {
-        console.log(res.data)
         toast.success("Login succesful")
         const modifiedData = { ...res.data }
         delete modifiedData.password
@@ -38,7 +37,6 @@ const Login = () => {
     senderFunction()
   }
 
-  console.log(name, email, password)
 
 
   return (

@@ -20,7 +20,6 @@ const SignUp = () => {
       password: password,
     })
       .then((res) => {
-        console.log(res.data)
         toast.success("Acccount created successfully")
         navigate("/login")
 
@@ -56,7 +55,6 @@ const SignUp = () => {
     return true;
   };
 
-  console.log(name, email, password)
 
 
   return (

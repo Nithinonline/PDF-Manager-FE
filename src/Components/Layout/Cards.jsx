@@ -48,7 +48,6 @@ const Cards = () => {
             try {
                 if (user) {
                     const response = await axios.get(`${server}/getUser/${user._id}`);
-                    console.log(response.data);
                     setPdf(response.data.pdf);
                 }
             } catch (error) {
@@ -90,7 +89,6 @@ const Cards = () => {
                 pagesToExtract: pageNumbers
             })
                 .then((res) => {
-                    console.log(res.data)
                     toast.success("PDF Extracted successfully")
                     setPageNumbers([])
                     setPdfOnView(null)
@@ -119,7 +117,6 @@ const Cards = () => {
             link.download = pdf.title;
             link.click();
             window.URL.revokeObjectURL(url);
-            console.log('PDF Content:', response.data);
         } catch (error) {
             console.error('Error during download:', error);
         }
@@ -132,7 +129,6 @@ const Cards = () => {
 
         await axios.delete(`${server}/delete/${user._id}/${pdf._id}`)
             .then((res) => {
-                console.log(res.data)
                 toast.success("PDF deleted successfully")
                 setIsPdfUpdated(!isPdfUpdated)
             })
