@@ -86,7 +86,7 @@ const Cards = () => {
     //sender function which sends a request for extracting the pdf
     const senderFunction = async (user, pdf) => {
         if (pageNumbers.length !== 0) {
-            await axios.post(`http://localhost:4200/api/v1/extract/${user._id}/${pdf._id}`, {
+            await axios.post(`${server}/extract/${user._id}/${pdf._id}`, {
                 pagesToExtract: pageNumbers
             })
                 .then((res) => {
@@ -130,7 +130,7 @@ const Cards = () => {
 
     const handleDelete = async (user, pdf) => {
 
-        await axios.delete(`http://localhost:4200/api/v1/delete/${user._id}/${pdf._id}`)
+        await axios.delete(`${server}/delete/${user._id}/${pdf._id}`)
             .then((res) => {
                 console.log(res.data)
                 toast.success("PDF deleted successfully")

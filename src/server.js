@@ -1,1 +1,1 @@
-export const server="http://localhost:4200/api/v1";
+export const server="https://pdf-manager-be-1.onrender.com";
